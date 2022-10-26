@@ -154,15 +154,6 @@
                                     <segue destination="Ql5-an-wjy" kind="unwind" unwindAction="unwindSegueFor:towards:" id="i3P-Vl-oti"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qFx-uI-WRa">
-                                <rect key="frame" x="20" y="154" width="350" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="350" id="Xyg-ai-6ya"/>
-                                    <constraint firstAttribute="height" constant="35" id="xMh-W1-yue"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Y2V-CT-zmh">
                                 <rect key="frame" x="20" y="279" width="350" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -180,6 +171,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qFx-uI-WRa">
+                                <rect key="frame" x="20" y="154" width="350" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="Xyg-ai-6ya"/>
+                                    <constraint firstAttribute="height" constant="35" id="xMh-W1-yue"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zC8-GF-hK2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

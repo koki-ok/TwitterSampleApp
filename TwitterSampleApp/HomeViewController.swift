@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class HomeViewController: UIViewController {
     @IBAction func unwindSegue(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {}
@@ -21,23 +22,30 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
 
-        let tweet = TweetModel()
-        tweet.userName = "ほげ"
-        tweet.text = "ふがふがふがふがふがふがふがふがふがふがふがふがふがふがふがふが"
+//        let tweet = TweetModel()
+//        tweet.userName = "ほげ"
+//        tweet.text = "ふがふがふがふがふがふがふがふがふがふがふがふがふがふがふがふが"
+//
+//        let tweetni = TweetModel()
+//        tweetni.userName = "ふが"
+//        tweetni.text = "ふがごおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお"
+//
+//        tweetDataList.append(tweet)
+//        tweetDataList.append(tweetni)
+        setTweetData()
         
-        let tweetni = TweetModel()
-        tweetni.userName = "ふが"
-        tweetni.text = "ふがごおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお"
-        
-        tweetDataList.append(tweet)
-        tweetDataList.append(tweetni)
-        
-        
-//        self.tweetDataList = [tweet]
-//        self.tweetDataList = [tweetni]
         tableView.reloadData()
-    }    
+    }
+    
+    func setTweetData() {
+        let realm = try! Realm()
+        let result = realm.objects(TweetModel.self)
+        tweetDataList = Array(result)
+    }
 }
+
+
+
 
 
 // セルタップなどを検知する機能の他にも、UITableViewの見た目や挙動に関する機能も含まれている。その設定
