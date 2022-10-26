@@ -32,6 +32,8 @@ class HomeViewController: UIViewController {
     }
     
     func setTweetData() {
+        let config = Realm.Configuration(schemaVersion: 1)
+        Realm.Configuration.defaultConfiguration = config
         let realm = try! Realm()
         let result = realm.objects(TweetModel.self)
         tweetDataList = Array(result)

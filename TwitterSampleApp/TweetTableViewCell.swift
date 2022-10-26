@@ -19,24 +19,25 @@ class TweetTableViewCell: UITableViewCell {
         let currentTime = Date()
         
         nameLabel.text = tweet.userName
-        dateLabel.text = dateFormatter.string(from: currentTime)
+        dateLabel.text = tweet.recordDate
         textContentLabel.text = tweet.text
+//        dateFormatter.string(from: currentTime)
     }
     
 }
 
-extension DateFormatter {
-    enum Template: String {
-        case date = "yyMMdd"
-        case time = "Hms"
-        case full = "yMdkHms"
-    }
-    
-    func setTemplate(_ template: Template) {
-        dateFormat = DateFormatter.dateFormat(
-            fromTemplate: template.rawValue,
-            options: 0,
-            locale: Locale(identifier: "ja_JP")
-        )
-    }
-}
+//extension DateFormatter {
+//    enum Template: String {
+//        case date = "yyMMdd"
+//        case time = "Hms"
+//        case full = "yMdkHms"
+//    }
+//
+//    func setTemplate(_ template: Template) {
+//        dateFormat = DateFormatter.dateFormat(
+//            fromTemplate: template.rawValue,
+//            options: 0,
+//            locale: Locale(identifier: "ja_JP")
+//        )
+//    }
+//}

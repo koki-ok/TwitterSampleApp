@@ -13,4 +13,7 @@ class TweetModel: Object {
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var userName: String = ""
     @objc dynamic var text: String = ""
+    @objc dynamic var recordDate: String = ""
+    
+   
 }
