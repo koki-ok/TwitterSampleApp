@@ -8,6 +8,8 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    @IBAction func unwindSegue(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {}
+    
     @IBOutlet weak var tableView: UITableView!
     
     // 「TweetModel」に格納されたデータを使用できるようにする。

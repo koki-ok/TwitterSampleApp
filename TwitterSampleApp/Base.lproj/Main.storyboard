@@ -150,6 +150,9 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                     <color key="baseBackgroundColor" red="0.87751812110000005" green="0.56261928360000002" blue="0.20016443840000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Ql5-an-wjy" kind="unwind" unwindAction="unwindSegueFor:towards:" id="i3P-Vl-oti"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qFx-uI-WRa">
                                 <rect key="frame" x="20" y="154" width="350" height="35"/>
@@ -204,11 +207,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="l6i-0b-KSc"/>
                     <connections>
+                        <outlet property="postButton" destination="jcG-KN-BTI" id="f6X-fH-2eb"/>
                         <outlet property="textView" destination="Y2V-CT-zmh" id="9s4-ml-Tsh"/>
                         <outlet property="userNameTextField" destination="qFx-uI-WRa" id="xAr-XQ-KHL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2R7-ir-Kru" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Ql5-an-wjy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="896.92307692307691" y="3.5545023696682461"/>
         </scene>
