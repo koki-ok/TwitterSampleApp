@@ -16,25 +16,19 @@ class HomeViewController: UIViewController {
     // 「TweetModel」に格納されたデータを使用できるようにする。
     var tweetDataList: [TweetModel] = []
     
+    // viewDidLoadは、メモリが割り当てられた１回だけ呼び出される
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "ホーム"
         tableView.dataSource = self
         tableView.delegate = self
-
-//        let tweet = TweetModel()
-//        tweet.userName = "ほげ"
-//        tweet.text = "ふがふがふがふがふがふがふがふがふがふがふがふがふがふがふがふが"
-//
-//        let tweetni = TweetModel()
-//        tweetni.userName = "ふが"
-//        tweetni.text = "ふがごおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお"
-//
-//        tweetDataList.append(tweet)
-//        tweetDataList.append(tweetni)
-        setTweetData()
-        
-        tableView.reloadData()
+    }
+    
+    // 画面が呼び出されるたびに毎回呼び出される。データ更新による反映はこっちに書く。
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTweetData()           // 画面が表示されるたびにデータがセットされる。
+        tableView.reloadData()   // データを反映させるにはUITableViewにreloadDataをすることで反映させる。
     }
     
     func setTweetData() {
