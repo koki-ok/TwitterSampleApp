@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct TweetModel {
-    var userName: String
-    var text: String
+class TweetModel: Object {
+    // データの一意性を担保するために、それぞれに一意の文字列を付与
+    @objc dynamic var id: String = UUID().uuidString
+    @objc dynamic var userName: String = ""
+    @objc dynamic var text: String = ""
 }

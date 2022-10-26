@@ -21,9 +21,13 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
 
-        let tweet = TweetModel(userName: "ほげ", text: "ふがふがふがふがふがふがふがふがふがふがふがふがふがふがふがふが")
+        let tweet = TweetModel()
+        tweet.userName = "ほげ"
+        tweet.text = "ふがふがふがふがふがふがふがふがふがふがふがふがふがふがふがふが"
         
-        let tweetni = TweetModel(userName: "ふが", text: "ふがごおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお")
+        let tweetni = TweetModel()
+        tweetni.userName = "ふが"
+        tweetni.text = "ふがごおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお"
         
         tweetDataList.append(tweet)
         tweetDataList.append(tweetni)
