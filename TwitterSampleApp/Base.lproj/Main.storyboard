@@ -135,7 +135,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ツイート" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTd-F6-4A4">
-                                <rect key="frame" x="20" y="243" width="90" height="25"/>
+                                <rect key="frame" x="19.999999999999993" y="243" width="89.333333333333314" height="25"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -180,14 +180,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCs-Pe-EOH">
+                                <rect key="frame" x="234.66666666666666" y="247" width="28.333333333333343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ 140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfi-oA-srV">
+                                <rect key="frame" x="269" y="247" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zC8-GF-hK2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JTd-F6-4A4" firstAttribute="top" secondItem="MZv-DN-WMJ" secondAttribute="top" constant="243" id="401-AB-SaQ"/>
                             <constraint firstItem="JTd-F6-4A4" firstAttribute="top" secondItem="qFx-uI-WRa" secondAttribute="bottom" constant="54" id="8kq-X8-AaJ"/>
+                            <constraint firstItem="yCs-Pe-EOH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JTd-F6-4A4" secondAttribute="trailing" constant="8" symbolic="YES" id="CaD-6Z-OW1"/>
                             <constraint firstItem="jcG-KN-BTI" firstAttribute="centerY" secondItem="MZv-DN-WMJ" secondAttribute="centerY" constant="127" id="Fxb-R2-ITt"/>
+                            <constraint firstItem="zC8-GF-hK2" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Wfi-oA-srV" secondAttribute="trailing" symbolic="YES" id="KQW-dQ-RTq"/>
                             <constraint firstItem="JTd-F6-4A4" firstAttribute="bottom" secondItem="4Vg-fe-rak" secondAttribute="bottom" id="Na2-Bc-bh2"/>
+                            <constraint firstItem="zC8-GF-hK2" firstAttribute="trailing" secondItem="yCs-Pe-EOH" secondAttribute="trailing" constant="126.99999999999994" id="RSt-X8-pDO"/>
+                            <constraint firstItem="Wfi-oA-srV" firstAttribute="leading" secondItem="yCs-Pe-EOH" secondAttribute="trailing" constant="6" id="T9O-l8-O9z"/>
+                            <constraint firstItem="Wfi-oA-srV" firstAttribute="centerY" secondItem="yCs-Pe-EOH" secondAttribute="centerY" id="UTL-pq-WSD"/>
                             <constraint firstItem="zC8-GF-hK2" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2n7-GB-EYm" secondAttribute="trailing" symbolic="YES" id="VSq-e5-Ixx"/>
                             <constraint firstItem="zC8-GF-hK2" firstAttribute="trailing" secondItem="qFx-uI-WRa" secondAttribute="trailing" constant="20" id="ZBL-cw-ut1"/>
                             <constraint firstItem="4Vg-fe-rak" firstAttribute="leading" secondItem="zC8-GF-hK2" secondAttribute="leading" constant="103" id="bLI-Ds-hnd"/>
@@ -198,6 +215,8 @@
                             <constraint firstItem="jcG-KN-BTI" firstAttribute="leading" secondItem="zC8-GF-hK2" secondAttribute="leading" constant="120" id="jS1-EM-8vn"/>
                             <constraint firstItem="JTd-F6-4A4" firstAttribute="leading" secondItem="qFx-uI-WRa" secondAttribute="leading" id="jXc-J5-ccl"/>
                             <constraint firstItem="zC8-GF-hK2" firstAttribute="trailing" secondItem="Y2V-CT-zmh" secondAttribute="trailing" constant="20" id="msD-Ab-IJY"/>
+                            <constraint firstItem="yCs-Pe-EOH" firstAttribute="baseline" secondItem="JTd-F6-4A4" secondAttribute="firstBaseline" id="oZg-bF-qtv"/>
+                            <constraint firstItem="Wfi-oA-srV" firstAttribute="baseline" secondItem="yCs-Pe-EOH" secondAttribute="baseline" id="rTq-Fk-X9Q"/>
                             <constraint firstItem="zC8-GF-hK2" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Vg-fe-rak" secondAttribute="trailing" symbolic="YES" id="wbC-PI-PUi"/>
                             <constraint firstItem="Y2V-CT-zmh" firstAttribute="top" secondItem="JTd-F6-4A4" secondAttribute="bottom" constant="11" id="wfj-e9-EV5"/>
                             <constraint firstItem="2n7-GB-EYm" firstAttribute="top" secondItem="zC8-GF-hK2" secondAttribute="top" constant="27" id="xOM-bM-Fi1"/>
@@ -207,6 +226,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="l6i-0b-KSc"/>
                     <connections>
+                        <outlet property="countLabel" destination="yCs-Pe-EOH" id="POU-ID-lXk"/>
                         <outlet property="postButton" destination="jcG-KN-BTI" id="f6X-fH-2eb"/>
                         <outlet property="textView" destination="Y2V-CT-zmh" id="9s4-ml-Tsh"/>
                         <outlet property="userNameTextField" destination="qFx-uI-WRa" id="xAr-XQ-KHL"/>
