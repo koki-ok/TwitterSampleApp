@@ -21,23 +21,5 @@ class TweetTableViewCell: UITableViewCell {
         nameLabel.text = tweet.userName
         dateLabel.text = tweet.recordDate
         textContentLabel.text = tweet.text
-//        dateFormatter.string(from: currentTime)
     }
-    
 }
-
-//extension DateFormatter {
-//    enum Template: String {
-//        case date = "yyMMdd"
-//        case time = "Hms"
-//        case full = "yMdkHms"
-//    }
-//
-//    func setTemplate(_ template: Template) {
-//        dateFormat = DateFormatter.dateFormat(
-//            fromTemplate: template.rawValue,
-//            options: 0,
-//            locale: Locale(identifier: "ja_JP")
-//        )
-//    }
-//}

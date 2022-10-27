@@ -15,28 +15,32 @@ class NewPostController: UIViewController {
     @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var countLabel: UILabel!
     
-    private let maxCount: Int = 140
+    private let maxCount: Int = 140 // 文字数制限
     
+    // データがハッシュの場合、配列でモデルに追加する必要がある。
     var tweetData = TweetModel()
     var tweetDataList: [TweetModel] = []
     
     
-       override func viewDidLoad() {
-            super.viewDidLoad()
-            self.navigationItem.title = "投稿"
-           
-            setDoneButton()
-           
-            textView.layer.borderColor = UIColor.black.cgColor
-            userNameTextField.layer.borderColor = UIColor.black.cgColor
-            textView.layer.borderWidth = 1.0
-            userNameTextField.layer.borderWidth = 1.0
-           
-            tapButton()
-           
-            self.textView.delegate = self
-       }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.title = "投稿" // ヘッダータイトルの変更
+        
+        setDoneButton()
+        
+        // 文字入力欄の枠線の色と太さを指定。ないとほぼ透明
+        textView.layer.borderColor = UIColor.black.cgColor
+        userNameTextField.layer.borderColor = UIColor.black.cgColor
+        textView.layer.borderWidth = 1.0
+        userNameTextField.layer.borderWidth = 1.0
+        
+        tapButton()
+        
+        textView.delegate = self
+    }
     
+    
+    // 閉じるボタンを追加する。
     func setDoneButton() {
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 40))
         let commitButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tapDoneButton))
@@ -45,19 +49,17 @@ class NewPostController: UIViewController {
         userNameTextField.inputAccessoryView = toolBar
     }
     
+    // 閉じるボタンがタップされたら閉じる。
     @objc func tapDoneButton() {
         view.endEditing(true)
     }
     
-    // ここから追加
-   
-
-    
-
+    // 投稿ボタンがタップされた際の挙動。tapPostButtonメソッドが実行される。
     func tapButton() {
         postButton.addTarget(self, action: #selector(self.tapPostButton(_:)), for: UIControl.Event.touchUpInside)
     }
     
+    // タップされた場合「モデル」に入力内容を「追加」する。
     @objc func tapPostButton(_ sender: UIButton) {
         print("tapされました")
         let tweet = TweetModel()
@@ -67,6 +69,7 @@ class NewPostController: UIViewController {
         saveData(with: tweet.userName, text: tweet.text)
     }
     
+    // 上記でモデルに保存された内容を「Realm」に「保存」する。
     func saveData(with name: String, text: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.setTemplate(.full)
@@ -79,10 +82,7 @@ class NewPostController: UIViewController {
             tweetData.recordDate = dateFormatter.string(from: currentTime)
             realm.add(tweetData)
         }
-        print("userName: \(tweetData.userName), text:\(tweetData.text), recordDate:\(tweetData.recordDate)")
     }
-    
-    
 }
 
 
@@ -92,7 +92,7 @@ extension DateFormatter {
         case time = "Hms"
         case full = "yMdkHms"
     }
-
+    
     func setTemplate(_ template: Template) {
         dateFormat = DateFormatter.dateFormat(
             fromTemplate: template.rawValue,
@@ -102,10 +102,12 @@ extension DateFormatter {
     }
 }
 
+// TableViewの変更内容を通知する。
 extension NewPostController: UITextViewDelegate {
-   
+    
     // 文字数制限をする、UITextViewのdelegateメソッドであるshouldChangeTextin
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        // 「入力された文字数」＋（「挿入しようとする文字数」ー「日本語時の選択範囲」）
         return textView.text.count + (text.count - range.length) <= maxCount
     }
     

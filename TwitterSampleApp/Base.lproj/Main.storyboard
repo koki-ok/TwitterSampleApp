@@ -165,9 +165,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（140字以内）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Vg-fe-rak">
-                                <rect key="frame" x="103" y="244" width="135" height="24"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="（140字以内）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Vg-fe-rak">
+                                <rect key="frame" x="101" y="245.33333333333337" width="107" height="18.666666666666657"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -201,7 +201,7 @@
                             <constraint firstItem="yCs-Pe-EOH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JTd-F6-4A4" secondAttribute="trailing" constant="8" symbolic="YES" id="CaD-6Z-OW1"/>
                             <constraint firstItem="jcG-KN-BTI" firstAttribute="centerY" secondItem="MZv-DN-WMJ" secondAttribute="centerY" constant="127" id="Fxb-R2-ITt"/>
                             <constraint firstItem="zC8-GF-hK2" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Wfi-oA-srV" secondAttribute="trailing" symbolic="YES" id="KQW-dQ-RTq"/>
-                            <constraint firstItem="JTd-F6-4A4" firstAttribute="bottom" secondItem="4Vg-fe-rak" secondAttribute="bottom" id="Na2-Bc-bh2"/>
+                            <constraint firstItem="JTd-F6-4A4" firstAttribute="bottom" secondItem="4Vg-fe-rak" secondAttribute="bottom" constant="2" id="Na2-Bc-bh2"/>
                             <constraint firstItem="zC8-GF-hK2" firstAttribute="trailing" secondItem="yCs-Pe-EOH" secondAttribute="trailing" constant="126.99999999999994" id="RSt-X8-pDO"/>
                             <constraint firstItem="Wfi-oA-srV" firstAttribute="leading" secondItem="yCs-Pe-EOH" secondAttribute="trailing" constant="6" id="T9O-l8-O9z"/>
                             <constraint firstItem="Wfi-oA-srV" firstAttribute="centerY" secondItem="yCs-Pe-EOH" secondAttribute="centerY" id="UTL-pq-WSD"/>

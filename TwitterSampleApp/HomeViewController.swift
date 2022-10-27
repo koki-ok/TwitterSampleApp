@@ -42,8 +42,6 @@ class HomeViewController: UIViewController {
 
 
 
-
-
 // セルタップなどを検知する機能の他にも、UITableViewの見た目や挙動に関する機能も含まれている。その設定
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -71,7 +69,6 @@ extension HomeViewController: UITableViewDataSource {
     }
     // 「cellForRowAt」は、リストの中身を設定する。
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = UITableViewCell()　// インスタンス化
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetTableViewCell") as! TweetTableViewCell
         // 0から始まる番号を表示される順番に渡す。
         cell.configure(tweet: tweetDataList[indexPath.row])
