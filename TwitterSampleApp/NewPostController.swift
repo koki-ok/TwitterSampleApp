@@ -19,7 +19,7 @@ class NewPostController: UIViewController {
     
     // データがハッシュの場合、配列でモデルに追加する必要がある。
     var tweetData = TweetModel()
-    var tweetDataList: [TweetModel] = []
+//    var tweetDataList: [TweetModel] = []
     
     
     override func viewDidLoad() {
@@ -62,11 +62,10 @@ class NewPostController: UIViewController {
     // タップされた場合「モデル」に入力内容を「追加」する。
     @objc func tapPostButton(_ sender: UIButton) {
         print("tapされました")
-        let tweet = TweetModel()
-        tweet.userName = userNameTextField.text ?? ""
-        tweet.text = textView.text
-        tweetDataList.append(tweet)
-        saveData(with: tweet.userName, text: tweet.text)
+        tweetData.userName = userNameTextField.text ?? ""
+        tweetData.text = textView.text
+//        tweetDataList.append(tweetData)
+        saveData(with: tweetData.userName, text: tweetData.text)
     }
     
     // 上記でモデルに保存された内容を「Realm」に「保存」する。
@@ -74,13 +73,13 @@ class NewPostController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.setTemplate(.full)
         let currentTime = Date()
-        
+                
         let realm = try! Realm()
         try! realm.write {
             tweetData.userName = name
             tweetData.text = text
             tweetData.recordDate = dateFormatter.string(from: currentTime)
-            realm.add(tweetData)
+            realm.add(tweetData) // tweetDataList
         }
     }
 }
