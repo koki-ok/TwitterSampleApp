@@ -14,6 +14,4 @@ class TweetModel: Object {
     @objc dynamic var userName: String = ""
     @objc dynamic var text: String = ""
     @objc dynamic var recordDate: String = ""
-    
-   
 }

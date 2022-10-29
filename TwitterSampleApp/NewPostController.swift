@@ -17,10 +17,7 @@ class NewPostController: UIViewController {
     
     private let maxCount: Int = 140 // 文字数制限
     
-    // データがハッシュの場合、配列でモデルに追加する必要がある。
     var tweetData = TweetModel()
-//    var tweetDataList: [TweetModel] = []
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
